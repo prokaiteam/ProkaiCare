@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProKai app - AI-powered exam preparation for SSC, UPSC, CBSE under ₹250. No books, no courses, just 3 clicks!">
+    <meta name="keywords" content="ProKai app, exam preparation app, AI study tools, UPSC prep, CBSE study, real-time exam explanations">
+    <meta name="author" content="ProKai Team">
+    <title>ProKai - Clear Any Exam in 3 Clicks!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading ProKai...</p>
+        </div>
+    </div>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo-section animate-fade-in">
+                <div class="logo-text">
+                    <h1 class="typewriter-text" id="mainTitle">ProKai</h1>
+                    <h2 class="slide-up-delay prokai-subheading">ProKai</h2>
+                    <p class="slide-up-delay">AI-Powered Study Revolution</p>
+                </div>
+            </div>
+            <p class="header-tagline slide-up-delay">Clear Any Exam in 3 Clicks • ₹250 Only • No Books, No Courses! • No Online Teachers, No MCQ Papers • ProKai Covers All Things Like Your Personal Alibaba Genie!</p>
+        </div>
+    </header>
+
+    <section class="hero animate-on-scroll">
+        <div class="container">
+            <h2 class="bounce-in">Transform Your Exam Preparation Forever</h2>
+            <p class="fade-in-up">Join thousands of students who've revolutionized their study methods with AI-powered prompt scripts and real-time explanations.</p>
+            
+            <!-- Animated Stats Counter -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Happy Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">% Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="250">0</div>
+                    <div class="stat-label">₹ Only</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section animate-on-scroll">
+            <h2>Why Students Struggle? ProKai Has Solutions!</h2>
+            <div class="problems-grid">
+                <div class="problem-card hover-lift">
+                    <h4><i class="fas fa-book"></i> Syllabus Confusion</h4>
+                    <p>Overwhelmed by massive syllabi? <span class="solution-highlight">ProKai's 10-year analysis</span> identifies exactly what topics are exam-critical.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <h4><i class="fas fa-times-circle"></i> Irrelevant Practice</h4>
+                    <p>Tired of off-pattern MCQs? Get <span class="solution-highlight">unlimited exam-like questions</span> with instant AI explanations.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <h4><i class="fas fa-dollar-sign"></i> Expensive Courses</h4>
+                    <p>Spending thousands on courses? <span class="solution-highlight">₹250 one-time payment</span> gives you everything you need.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <h4><i class="fas fa-hourglass-half"></i> Slow Support</h4>
+                    <p>Waiting hours for doubt clearance? <span class="solution-highlight">Real-time AI explanations</span> in 2 seconds flat.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <h4><i class="fas fa-signal"></i> Internet Issues</h4>
+                    <p>Struggling with connectivity? <span class="solution-highlight">Works on low internet</span> with offline PDF support.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <h4><i class="fas fa-cog"></i> Complex Setup</h4>
+                    <p>Hours wasted on registration? <span class="solution-highlight">3 clicks, 2 seconds</span> to start studying.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>ProKai vs Traditional Platforms</h2>
+            <div class="comparison-wrapper">
+                <table class="comparison">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="prokai-column">ProKai</th>
+                            <th>Others (Testbook, BYJU'S, Unacademy)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row-animate">
+                            <td><strong>Setup Time</strong></td>
+                            <td class="highlight-cell">3 clicks, 2 seconds ⚡</td>
+                            <td>Hours of registration & course selection</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Content Quality</strong></td>
+                            <td class="highlight-cell">10-year exam analysis, 100% relevant</td>
+                            <td>Generic content, often irrelevant</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Explanations</strong></td>
+                            <td class="highlight-cell">Real-time AI, step-by-step</td>
+                            <td>Pre-recorded, limited coverage</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Cost</strong></td>
+                            <td class="highlight-cell">₹250 one-time payment</td>
+                            <td>₹1000+ monthly subscriptions</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Accessibility</strong></td>
+                            <td class="highlight-cell">Works with any AI + offline PDFs</td>
+                            <td>Platform-locked, internet dependent</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Personalization</strong></td>
+                            <td class="highlight-cell">AI adapts to your learning style</td>
+                            <td>One-size-fits-all approach</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Support</strong></td>
+                            <td class="highlight-cell">24/7 AI + prokai.help@gmail.com</td>
+                            <td>Limited email support</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Practice Questions</strong></td>
+                            <td class="highlight-cell">Unlimited MCQs with instant explanations</td>
+                            <td>Limited question banks, slow feedback</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Subject Coverage</strong></td>
+                            <td class="highlight-cell">All subjects according to your exam</td>
+                            <td>Generic subjects, not exam-specific</td>
+                        </tr>
+                        <tr class="table-row-animate">
+                            <td><strong>Study Commands</strong></td>
+                            <td class="highlight-cell">Magical ProKai commands for exam prep</td>
+                            <td>No specialized study tools or commands</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>How ProKai Works: The Magic Behind AI Study Scripts</h2>
+            <div class="features-grid">
+                <div class="feature-card bounce-on-hover">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic pulse-icon"></i>
+                    </div>
+                    <h3>Smart Prompt Scripts</h3>
+                    <p>Think of them as <strong>magic commands</strong> - copy-paste these into ChatGPT, Gemini, or Grok, and instantly get personalized study material, MCQs, and explanations tailored to your exam.</p>
+                </div>
+                <div class="feature-card bounce-on-hover">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt pulse-icon"></i>
+                    </div>
+                    <h3>Real-Time Learning</h3>
+                    <p>Every wrong answer becomes a <strong>learning opportunity</strong> - AI explains step-by-step where you went wrong and how to get it right, like having a world-class teacher 24/7.</p>
+                </div>
+                <div class="feature-card bounce-on-hover">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar pulse-icon"></i>
+                    </div>
+                    <h3>Data-Driven Success</h3>
+                    <p>Built on <strong>10 years of exam analysis</strong> - every script is designed to focus on high-weightage topics that actually appear in your exam.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Why ProKai is Your Smart Choice</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card hover-lift">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Save Money</h3>
+                    <p>Skip expensive courses and coaching classes. Just <strong>₹250 one-time</strong> vs thousands spent on traditional methods. No hidden fees, no monthly subscriptions.</p>
+                </div>
+                <div class="benefit-card hover-lift">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Save Time</h3>
+                    <p>No lengthy registrations or course browsing. <strong>3 clicks, 2 seconds</strong> to start studying. Focus on learning, not on setup complexity.</p>
+                </div>
+                <div class="benefit-card hover-lift">
+                    <div class="benefit-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Personal Real-Time Explanations</h3>
+                    <p>Get instant, personalized explanations for every question. AI understands <strong>your specific doubts</strong> and explains in your preferred learning style.</p>
+                </div>
+                <div class="benefit-card hover-lift">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Personal AI Teacher</h3>
+                    <p>Your own <strong>24/7 AI tutor</strong> that never gets tired, adapts to your pace, and gives unlimited practice with real-time feedback.</p>
+                </div>
+                <div class="benefit-card hover-lift">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Way to Learn</h3>
+                    <p>Skip textbooks and lengthy videos. <strong>Learn by doing</strong> with targeted MCQs and instant explanations. Master concepts 10x faster.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Success Stories from Real Students</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card slide-in-left">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>ProKai's GOD level scripts gave me the perfect UPSC roadmap. The weightage analysis and real-time explanations saved months of preparation time!</p>
+                    <div class="author">- Priya S., UPSC Prelims Cleared</div>
+                </div>
+                <div class="testimonial-card slide-in-right">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Scored 95% in CBSE Physics thanks to ProKai's exam-pattern MCQs and instant AI explanations. Best ₹250 I ever spent!</p>
+                    <div class="author">- Arjun K., Class 12 Topper</div>
+                </div>
+                <div class="testimonial-card slide-in-left">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>As a coaching institute owner, ProKai's scripts help me create better content for my students. They're now scoring higher than ever!</p>
+                    <div class="author">- Rajesh Sir, Coaching Institute</div>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top: 30px; font-size: 1.2em;"><strong>90% of ProKai users report better scores within 30 days!</strong></p>
+        </section>
+
+        <section class="section animate-on-scroll">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item expandable">
+                    <dt class="faq-question">
+                        <i class="fas fa-plus faq-icon"></i>
+                        How does ProKai actually work?
+                    </dt>
+                    <dd class="faq-answer">
+                        Download the app, choose your exam and level, copy our smart prompt script, paste it in any AI chatbot (ChatGPT/Gemini/Grok), and get personalized study material in 2 seconds!
+                    </dd>
+                </div>
+                <div class="faq-item expandable">
+                    <dt class="faq-question">
+                        <i class="fas fa-plus faq-icon"></i>
+                        Do I need to understand AI or coding?
+                    </dt>
+                    <dd class="faq-answer">
+                        Absolutely not! It's as simple as copy-paste. If you can send a WhatsApp message, you can use ProKai.
+                    </dd>
+                </div>
+                <div class="faq-item expandable">
+                    <dt class="faq-question">
+                        <i class="fas fa-plus faq-icon"></i>
+                        Is ₹250 really the total cost?
+                    </dt>
+                    <dd class="faq-answer">
+                        Yes! One-time UPI payment of ₹250. No hidden charges, no monthly subscriptions, no additional costs.
+                    </dd>
+                </div>
+                <div class="faq-item expandable">
+                    <dt class="faq-question">
+                        <i class="fas fa-plus faq-icon"></i>
+                        What if I don't have good internet?
+                    </dt>
+                    <dd class="faq-answer">
+                        ProKai works on low internet connections and provides offline PDFs for uninterrupted studying.
+                    </dd>
+                </div>
+                <div class="faq-item expandable">
+                    <dt class="faq-question">
+                        <i class="fas fa-plus faq-icon"></i>
+                        Which exams are supported?
+                    </dt>
+                    <dd class="faq-answer">
+                        SSC, UPSC, Banking, CBSE, and many more. Choose from Basic, Pro, or GOD levels based on your needs.
+                    </dd>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="cta animate-on-scroll">
+        <div class="container">
+            <h2 class="glow-text">Ready to Transform Your Exam Preparation?</h2>
+            <p>Join the AI study revolution. No books, no expensive courses, no complicated setups.</p>
+            <p style="font-size: 1.3em; margin-bottom: 40px;"><span class="highlight">Just 3 clicks to success!</span></p>
+            <a href="javascript:void(0)" class="cta-button pulse-button" onclick="alert('Download link coming soon! Contact prokai.help@gmail.com for early access and exclusive offers!')">
+                <i class="fas fa-download"></i>
+                Download ProKai Now - ₹250 Only
+            </a>
+            <p style="margin-top: 30px; opacity: 0.9;">✨ Join thousands of successful students • 90% report better scores • Money-back guarantee</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ProKai</h3>
+                    <p>AI-Powered Study Revolution</p>
+                    <p class="footer-tagline">Clear Any Exam in 3 Clicks • ₹250 Only • No Books, No Courses!</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#comparison">Comparison</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="mailto:prokai.help@gmail.com">prokai.help@gmail.com</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://t.me/ProkaiOfficial" target="_blank" class="social-link" title="Telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="https://whatsapp.com/channel/0029Vb5oZSqKmCPRBBis0316" target="_blank" class="social-link" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@ProkaiOfficial" target="_blank" class="social-link" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/prokaiofficial" target="_blank" class="social-link" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://prokaiofficial.blogspot.com/" target="_blank" class="social-link" title="Blogger">
+                                <i class="fab fa-blogger-b"></i>
+                            </a>
+                            <a href="https://www.facebook.com/prokaiofficial" target="_blank" class="social-link" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/ProkaiOfficial?t=kfyCnNGSq4ZiRGBBCxHjGw&s=09" target="_blank" class="social-link" title="Twitter X">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/prokaiofficial?igsh=MTI5cWc5NTlqaGc0Zg==" target="_blank" class="social-link" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://discord.gg/QWs6Yw9v" target="_blank" class="social-link" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ProKai. All rights reserved. | Transforming education with AI technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
