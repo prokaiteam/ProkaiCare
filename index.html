@@ -54,16 +54,28 @@
 
 
     <style>
-        .circular-logo {
-            width: 100px;
-            /* Adjust as needed */
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-            /* Center horizontally */
-        }
+       
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+  height: auto;
+}
+
+.centerSmall {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 150px;
+  height: auto;
+}
+
+
+.app-logo {
+  -webkit-filter: drop-shadow(0 10px 30px rgba(223, 27, 60, 0.3));
+  filter: drop-shadow(0 10px 30px rgba(223, 27, 60, 0.3));
+}
     </style>
 </head>
 
@@ -100,12 +112,16 @@
         </div>
     </header>
 
+
+
                 
     <section class="hero animate-on-scroll">
         <div class="container">
 
-                <img src="assets/logo.png" alt="ProKai Logo" class="circular-logo slide-up-delay" />
-        </br>    </br>
+                <img src="assets/app_logo.png" alt="ProKai Logo" class="circular-logo slide-up-delay app-logo" />
+        </br>    </br>  </br>
+
+
             <h2 class="bounce-in">Transform Your Exam Preparation Forever</h2>
             <p class="fade-in-up">Join thousands of students who've revolutionized their study methods with AI-powered
                 prompt scripts and real-time explanations.</p>
@@ -130,7 +146,7 @@
 
     <div class="container">
         <section class="section animate-on-scroll">
-            <h2>Why Students Struggle? ProKai Has Solutions!</h2>
+            <h2>Why Students Struggle? ProKai Has The Only Solutions!</h2>
             <div class="problems-grid" id="problemsContainer">
 
             </div>
@@ -180,7 +196,7 @@
                         </tr>
                         <tr class="table-row-animate">
                             <td><strong>Support</strong></td>
-                            <td class="highlight-cell">24/7 AI + prokai.help@gmail.com</td>
+                            <td class="highlight-cell">24/7 AI + prokai.team@gmail.com</td>
                             <td>Limited email support</td>
                         </tr>
                         <tr class="table-row-animate">
@@ -204,6 +220,8 @@
         </section>
 
         <section class="section animate-on-scroll">
+             <img src="assets/features1.png" alt="ProKai Logo" class="center"/>
+        </br>
             <h2>How ProKai Works: The Magic Behind AI Study Scripts</h2>
             <div class="features-grid">
                 <div class="feature-card bounce-on-hover">
@@ -382,12 +400,14 @@
 
     <section class="cta animate-on-scroll">
         <div class="container">
+            <img src="assets/app_logo.png" alt="ProKai Logo" class="centerSmall app-logo"/>
+         
             <h2 class="glow-text">Ready to Transform Your Exam Preparation?</h2>
             <p>Join the AI study revolution. No books, no expensive courses, no complicated setups.</p>
             <p style="font-size: 1.3em; margin-bottom: 40px;"><span class="highlight">Just 3 clicks to success!</span>
             </p>
             <a href="javascript:void(0)" class="cta-button pulse-button"
-                onclick="alert('Download link coming soon! Contact prokai.help@gmail.com for early access and exclusive offers!')">
+                onclick="alert('Download link coming soon! Contact prokai.team@gmail.com for early access and exclusive offers!')">
                 <i class="fas fa-download"></i>
                 Download ProKai Now - ₹250 Only
             </a>
@@ -420,7 +440,7 @@
                     <div class="footer-section">
                         <h4>Support</h4>
                         <ul>
-                            <li><a href="mailto:prokai.help@gmail.com">prokai.help@gmail.com</a></li>
+                            <li><a href="mailto:prokai.team@gmail.com">prokai.team@gmail.com</a></li>
                             <li><a href="#">Help Center</a></li>
                             <li><a href="#">Terms of Service</a></li>
                             <li><a href="#">Privacy Policy</a></li>
