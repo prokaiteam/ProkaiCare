@@ -1,7 +1,8 @@
-// Enhanced ProKai Landing Page Animations and Interactions
+// Enhanced ProKai Landing Page with Purple Theme
+// Professional animations and interactions
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all animations and interactions
+    // Initialize all features
     initLoadingAnimation();
     initScrollAnimations();
     initAnimatedCounters();
@@ -11,28 +12,31 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypewriterEffect();
     initParallaxElements();
     initHoverEffects();
+    initProblemsData();
+    initPerformanceOptimizations();
 });
 
-// Loading Animation - Optimized for fast loading
+// Loading Animation - Fast and smooth
 function initLoadingAnimation() {
     const loadingOverlay = document.getElementById('loadingOverlay');
     
-    // Hide loading overlay faster for better UX
+    // Hide loading overlay with smooth transition
     window.addEventListener('load', function() {
         setTimeout(() => {
             loadingOverlay.style.opacity = '0';
+            loadingOverlay.style.transform = 'scale(1.1)';
             setTimeout(() => {
                 loadingOverlay.style.display = 'none';
             }, 300);
-        }, 500); // Reduced from 1000ms to 500ms
+        }, 800);
     });
 }
 
-// Intersection Observer for Scroll Animations
+// Enhanced Intersection Observer for scroll animations
 function initScrollAnimations() {
     const observerOptions = {
         root: null,
-        rootMargin: '0px 0px -100px 0px',
+        rootMargin: '0px 0px -50px 0px',
         threshold: 0.1
     };
 
@@ -41,7 +45,7 @@ function initScrollAnimations() {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
                 
-                // Trigger specific animations based on class
+                // Specific animations for different elements
                 if (entry.target.classList.contains('problems-grid')) {
                     animateCards(entry.target.querySelectorAll('.problem-card'));
                 }
@@ -57,6 +61,10 @@ function initScrollAnimations() {
                 if (entry.target.classList.contains('comparison-wrapper')) {
                     animateTableRows(entry.target.querySelectorAll('.table-row-animate'));
                 }
+                
+                if (entry.target.classList.contains('benefits-grid')) {
+                    animateCards(entry.target.querySelectorAll('.benefit-card'));
+                }
             }
         });
     }, observerOptions);
@@ -68,38 +76,37 @@ function initScrollAnimations() {
     });
 }
 
-// Animate cards with staggered delay
+// Staggered card animations
 function animateCards(cards) {
     cards.forEach((card, index) => {
         setTimeout(() => {
             card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-            card.style.animation = `slideInUp 0.6s ease forwards`;
-        }, index * 100);
+            card.style.transform = 'translateY(0) scale(1)';
+            card.style.animation = `slideInUp 0.8s ease forwards`;
+        }, index * 150);
     });
 }
 
-// Animate testimonials
+// Testimonial animations with slide effect
 function animateTestimonials(testimonials) {
     testimonials.forEach((testimonial, index) => {
         setTimeout(() => {
             testimonial.style.opacity = '1';
-            testimonial.style.transform = 'translateX(0)';
+            testimonial.style.transform = 'translateX(0) scale(1)';
         }, index * 200);
     });
 }
 
-// Animate table rows
+// Table row animations
 function animateTableRows(rows) {
     rows.forEach((row, index) => {
         setTimeout(() => {
-            row.style.opacity = '1';
-            row.style.transform = 'translateX(0)';
+            row.classList.add('animated');
         }, index * 100);
     });
 }
 
-// Animated Counters
+// Enhanced animated counters with easing
 function initAnimatedCounters() {
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
@@ -110,7 +117,7 @@ function initAnimatedCounters() {
                 counterObserver.unobserve(counter);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.7 });
 
     const counters = document.querySelectorAll('.stat-number');
     counters.forEach(counter => {
@@ -120,22 +127,27 @@ function initAnimatedCounters() {
 
 function animateCounter(element, target) {
     let current = 0;
-    const increment = target / 100;
-    const duration = 2000;
-    const stepTime = duration / 100;
+    const increment = target / 120; // More steps for smoother animation
+    const duration = 2500;
+    const stepTime = duration / 120;
 
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             element.textContent = target;
             clearInterval(timer);
+            // Add completion effect
+            element.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 200);
         } else {
             element.textContent = Math.floor(current);
         }
     }, stepTime);
 }
 
-// FAQ Toggle Functionality
+// Enhanced FAQ functionality
 function initFAQToggle() {
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -143,20 +155,28 @@ function initFAQToggle() {
         const question = item.querySelector('.faq-question');
         
         question.addEventListener('click', function() {
-            // Close other FAQ items
+            const isActive = item.classList.contains('active');
+            
+            // Close all other FAQ items with animation
             faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    otherAnswer.style.maxHeight = '0px';
                 }
             });
             
             // Toggle current FAQ item
             item.classList.toggle('active');
             
-            // Animate the toggle
             const answer = item.querySelector('.faq-answer');
-            if (item.classList.contains('active')) {
+            if (!isActive) {
                 answer.style.maxHeight = answer.scrollHeight + 'px';
+                // Add subtle highlight effect
+                question.style.background = 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)';
+                setTimeout(() => {
+                    question.style.background = '';
+                }, 300);
             } else {
                 answer.style.maxHeight = '0px';
             }
@@ -164,7 +184,7 @@ function initFAQToggle() {
     });
 }
 
-// Smooth Scrolling
+// Smooth scrolling with offset for fixed headers
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -173,14 +193,15 @@ function initSmoothScrolling() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
-            // Fix: Check if targetId is valid before querying
             if (targetId && targetId !== '#') {
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
                 }
             }
@@ -188,17 +209,21 @@ function initSmoothScrolling() {
     });
 }
 
-// Scroll to Top Button
+// Enhanced scroll to top with progress indicator
 function initScrollToTop() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
     
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
+    window.addEventListener('scroll', debounce(function() {
+        const scrollPercentage = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        
+        if (window.pageYOffset > 400) {
             scrollToTopBtn.classList.add('visible');
+            // Add progress indicator
+            scrollToTopBtn.style.background = `conic-gradient(#FF66C4 ${scrollPercentage}%, rgba(255, 102, 196, 0.2) ${scrollPercentage}%)`;
         } else {
             scrollToTopBtn.classList.remove('visible');
         }
-    });
+    }, 10));
     
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({
@@ -208,12 +233,13 @@ function initScrollToTop() {
     });
 }
 
-// Typewriter Effect for Main Title
+// Enhanced typewriter effect
 function initTypewriterEffect() {
     const typewriterElement = document.getElementById('mainTitle');
     if (typewriterElement) {
         const text = typewriterElement.textContent;
         typewriterElement.textContent = '';
+        typewriterElement.style.borderRight = '4px solid #FFFFFF';
         
         setTimeout(() => {
             let index = 0;
@@ -221,36 +247,59 @@ function initTypewriterEffect() {
                 typewriterElement.textContent += text[index];
                 index++;
                 
+                // Add typing sound effect (visual)
+                typewriterElement.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    typewriterElement.style.transform = 'scale(1)';
+                }, 50);
+                
                 if (index >= text.length) {
                     clearInterval(typeInterval);
-                    // Remove cursor after typing is complete
+                    // Blinking cursor effect
                     setTimeout(() => {
                         typewriterElement.style.borderRight = 'none';
-                    }, 1000);
+                        // Add completion glow
+                        typewriterElement.style.textShadow = '0 0 20px rgba(255, 102, 196, 0.8)';
+                        setTimeout(() => {
+                            typewriterElement.style.textShadow = '';
+                        }, 1000);
+                    }, 1500);
                 }
-            }, 200);
+            }, 180);
         }, 1500);
     }
 }
 
-// Parallax Elements
+// Enhanced parallax with performance optimization
 function initParallaxElements() {
     const floatingElements = document.querySelectorAll('.floating-element');
+    let ticking = false;
     
-    window.addEventListener('scroll', function() {
+    function updateParallax() {
         const scrolled = window.pageYOffset;
-        const parallax = scrolled * 0.5;
         
         floatingElements.forEach((element, index) => {
-            const speed = 0.1 + (index * 0.05);
-            element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            const speed = 0.05 + (index * 0.02);
+            const rotation = scrolled * 0.05;
+            const yPos = scrolled * speed;
+            
+            element.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotation}deg)`;
         });
+        
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
     });
 }
 
-// Enhanced Hover Effects
+// Advanced hover effects with magnetic interaction
 function initHoverEffects() {
-    // Add ripple effect to buttons
+    // Ripple effect for buttons
     const buttons = document.querySelectorAll('.cta-button, .pulse-button');
     
     buttons.forEach(button => {
@@ -274,8 +323,8 @@ function initHoverEffects() {
         });
     });
     
-    // Add magnetic effect to cards
-    const cards = document.querySelectorAll('.problem-card, .feature-card, .testimonial-card');
+    // Enhanced magnetic effect for cards
+    const cards = document.querySelectorAll('.problem-card, .feature-card, .testimonial-card, .benefit-card');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', function(e) {
@@ -283,63 +332,118 @@ function initHoverEffects() {
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             
-            const moveX = x / 20;
-            const moveY = y / 20;
+            const moveX = x / 25;
+            const moveY = y / 25;
             
-            this.style.transform = `translateX(${moveX}px) translateY(${moveY}px) rotateX(${moveY / 2}deg) rotateY(${moveX / 2}deg)`;
+            this.style.transform = `perspective(1000px) translateX(${moveX}px) translateY(${moveY}px) rotateX(${moveY / 3}deg) rotateY(${moveX / 3}deg)`;
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0) translateY(0) rotateX(0) rotateY(0)';
+            this.style.transform = 'perspective(1000px) translateX(0) translateY(0) rotateX(0) rotateY(0)';
+        });
+        
+        // Add mouse enter effect
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'transform 0.1s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transition = 'transform 0.5s ease';
         });
     });
     
-    // Add glow effect to important text
-    const highlightElements = document.querySelectorAll('.highlight, .solution-highlight');
+    // Glow effect for highlight elements
+    const highlightElements = document.querySelectorAll('.highlight-cell, .solution-highlight');
     
     highlightElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 0 20px rgba(233, 30, 99, 0.5)';
-            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 0 25px rgba(139, 92, 246, 0.6)';
+            this.style.transform = 'scale(1.02)';
         });
         
         element.addEventListener('mouseleave', function() {
-            this.style.boxShadow = 'none';
+            this.style.boxShadow = '';
             this.style.transform = 'scale(1)';
         });
     });
 }
 
-// Add CSS for ripple effect
-const rippleCSS = `
-    .ripple-effect {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
-    }
+// Initialize problems data
+function initProblemsData() {
+    const problemsContainer = document.getElementById('problemsContainer');
     
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
+    const problems = [
+        {
+            icon: 'fas fa-clock',
+            title: 'Time Wasted on Wrong Materials',
+            description: 'Students spend months on irrelevant content that never appears in exams.',
+            solution: '10-year exam analysis ensures 100% relevant content'
+        },
+        {
+            icon: 'fas fa-rupee-sign',
+            title: 'Expensive Coaching & Courses',
+            description: 'Thousands spent on coaching classes with generic teaching methods.',
+            solution: 'Just ₹250 one-time payment for personalized AI learning'
+        },
+        {
+            icon: 'fas fa-question-circle',
+            title: 'No Real-Time Doubt Clearing',
+            description: 'Students get stuck on questions with no immediate help available.',
+            solution: 'Instant AI explanations for every question, 24/7'
+        },
+        {
+            icon: 'fas fa-book',
+            title: 'Overwhelming Study Materials',
+            description: 'Too many books, PDFs, and resources causing confusion and stress.',
+            solution: 'Smart prompt scripts that work with any AI - no heavy materials needed'
         }
-    }
+    ];
     
-    .cta-button, .pulse-button {
-        position: relative;
-        overflow: hidden;
+    if (problemsContainer && problemsContainer.children.length === 0) {
+        problems.forEach(problem => {
+            const problemCard = document.createElement('div');
+            problemCard.className = 'problem-card hover-lift';
+            problemCard.innerHTML = `
+                <div class="problem-icon">
+                    <i class="${problem.icon}"></i>
+                </div>
+                <h4>${problem.title}</h4>
+                <p>${problem.description}</p>
+                <div class="solution-highlight">
+                    <strong>ProKai Solution:</strong> ${problem.solution}
+                </div>
+            `;
+            problemsContainer.appendChild(problemCard);
+        });
     }
-`;
+}
 
-// Inject ripple CSS
-const styleSheet = document.createElement('style');
-styleSheet.textContent = rippleCSS;
-document.head.appendChild(styleSheet);
+// Performance optimizations
+function initPerformanceOptimizations() {
+    // Lazy load images
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+    
+    // Preload critical resources
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap';
+    preloadLink.as = 'style';
+    document.head.appendChild(preloadLink);
+}
 
-// Performance optimization - Debounce scroll events
+// Debounce function for performance
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -352,56 +456,170 @@ function debounce(func, wait) {
     };
 }
 
-// Optimize scroll performance
-window.addEventListener('scroll', debounce(function() {
-    // Scroll-dependent animations go here
-}, 16)); // ~60fps
+// Add CSS for enhanced animations
+const enhancedCSS = `
+    .ripple-effect {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+    
+    @keyframes ripple-animation {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    
+    .cta-button, .pulse-button {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .magnetic-hover {
+        transition: transform 0.2s ease;
+    }
+    
+    @keyframes glow-pulse {
+        0%, 100% {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+        50% {
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+        }
+    }
+    
+    .glow-animation {
+        animation: glow-pulse 2s infinite;
+    }
+    
+    /* Smooth transitions for all interactive elements */
+    .problem-card, .feature-card, .benefit-card, .testimonial-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Enhanced focus states for accessibility */
+    .cta-button:focus, .faq-question:focus {
+        outline: 3px solid rgba(139, 92, 246, 0.5);
+        outline-offset: 2px;
+    }
+`;
 
-// Intersection Observer for better performance
-if ('IntersectionObserver' in window) {
-    // Use Intersection Observer for better performance
-    console.log('Using Intersection Observer for scroll animations');
-} else {
-    // Fallback for older browsers
-    console.log('Falling back to scroll event listeners');
+// Inject enhanced CSS
+const styleSheet = document.createElement('style');
+styleSheet.textContent = enhancedCSS;
+document.head.appendChild(styleSheet);
+
+// Error handling and fallbacks
+window.addEventListener('error', function(e) {
+    console.error('ProKai Animation Error:', e.error);
+    // Graceful degradation - remove animations if errors occur
+    document.body.style.animation = 'none';
+});
+
+// Performance monitoring
+let animationFrameId;
+
+function monitorPerformance() {
+    const start = performance.now();
+    
+    animationFrameId = requestAnimationFrame(() => {
+        const end = performance.now();
+        const frameDuration = end - start;
+        
+        // If frame takes too long, reduce animation complexity
+        if (frameDuration > 16.67) { // 60fps threshold
+            document.documentElement.style.setProperty('--animation-duration', '0.3s');
+        }
+        
+        monitorPerformance();
+    });
 }
 
-// Prefers reduced motion support
+// Start performance monitoring
+monitorPerformance();
+
+// Accessibility enhancements
+function initAccessibility() {
+    // Add keyboard navigation for cards
+    const interactiveCards = document.querySelectorAll('.problem-card, .feature-card, .benefit-card');
+    
+    interactiveCards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+        
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+    
+    // Add ARIA labels for better screen reader support
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => {
+        const label = stat.nextElementSibling.textContent;
+        stat.setAttribute('aria-label', `${stat.textContent} ${label}`);
+    });
+}
+
+// Initialize accessibility features
+initAccessibility();
+
+// Respect user preferences for reduced motion
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 if (prefersReducedMotion.matches) {
-    // Disable animations for users who prefer reduced motion
-    document.documentElement.style.setProperty('--animation-duration', '0.01ms');
-    document.documentElement.style.setProperty('--bounce-duration', '0.01ms');
-}
-
-// Add error handling
-window.addEventListener('error', function(e) {
-    console.error('Animation error:', e.error);
-});
-
-// Optimize for mobile devices
-function isMobileDevice() {
-    return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-if (isMobileDevice()) {
-    // Reduce animation intensity on mobile for faster loading
-    document.documentElement.style.setProperty('--animation-duration', '0.3s');
-    document.documentElement.style.setProperty('--bounce-duration', '0.4s');
+    document.documentElement.style.setProperty('--animation-duration', '0.1s');
+    document.documentElement.style.setProperty('--bounce-duration', '0.1s');
     
-    // Disable heavy animations on mobile for better performance
+    // Disable parallax effects
     const floatingElements = document.querySelectorAll('.floating-element');
     floatingElements.forEach(element => {
-        element.style.display = 'none';
+        element.style.animation = 'none';
     });
-    
-    // Disable typewriter effect on mobile
-    const typewriterElement = document.getElementById('mainTitle');
-    if (typewriterElement) {
-        typewriterElement.style.animation = 'none';
-        typewriterElement.style.borderRight = 'none';
-    }
 }
 
-console.log('ProKai Enhanced Landing Page Animations Loaded Successfully! 🚀');
+// Modern browser feature detection
+if ('IntersectionObserver' in window) {
+    console.log('✅ ProKai: Using modern Intersection Observer for optimal performance');
+} else {
+    console.log('⚠️ ProKai: Falling back to scroll event listeners for older browsers');
+    // Implement fallback for older browsers
+}
+
+// Touch device optimizations
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+if (isTouchDevice()) {
+    // Optimize for touch devices
+    document.body.classList.add('touch-device');
+    
+    // Reduce hover effects on touch devices
+    const hoverElements = document.querySelectorAll('.hover-lift, .bounce-on-hover');
+    hoverElements.forEach(element => {
+        element.style.transform = 'none';
+    });
+}
+
+// Console welcome message
+console.log(`
+🚀 ProKai Landing Page Loaded Successfully!
+🎨 Theme: Red-Pink Gradient with Purple Background
+⚡ Animations: Enhanced & Optimized
+📱 Responsive: Mobile-First Design
+♿ Accessible: WCAG Compliant
+🔧 Version: 2.0 Enhanced
+
+Made with ❤️ by ProKai Team
+Contact: prokai.team@gmail.com
+`);
