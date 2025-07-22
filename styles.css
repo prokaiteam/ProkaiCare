@@ -1,13 +1,10 @@
 :root {
-    --primary-pink: #FF66C4;
-    --primary-dark-pink: #fa3ab0;
-    /* --light-pink: #FCE4EC; */
-    --light-pink: #000000;
-    --secondary: #1E283B;
-    /* --dark-pink: #AD1457; */
-    --gradient-pink: linear-gradient(135deg, #FF66C4 0%, #fa3ab0 100%);
-    --text-dark: #cad6e2;
-    --text-light: #8ba2ad;
+    --primary-pink: #E91E63;
+    --light-pink: #FCE4EC;
+    --dark-pink: #AD1457;
+    --gradient-pink: linear-gradient(135deg, #E91E63 0%, #F06292 100%);
+    --text-dark: #2C3E50;
+    --text-light: #546E7A;
     --white: #FFFFFF;
     --shadow: 0 10px 30px rgba(233, 30, 99, 0.15);
     --shadow-hover: 0 15px 40px rgba(233, 30, 99, 0.25);
@@ -27,7 +24,7 @@ html {
 
 body { 
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, var(--light-pink) 0%, var(--light-pink) 100%);
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
     color: var(--text-dark); 
     line-height: 1.7;
     overflow-x: hidden;
@@ -364,7 +361,7 @@ header::before {
 .hero { 
     padding: 80px 20px; 
     text-align: center; 
-    background: var(--light-pink);
+    background: var(--white);
     position: relative;
 }
 
@@ -426,7 +423,7 @@ header::before {
 .section { 
     padding: 60px 20px; 
     margin: 40px 0; 
-    background: var(--secondary); 
+    background: var(--white); 
     border-radius: 20px; 
     box-shadow: var(--shadow);
     position: relative;
@@ -472,7 +469,7 @@ header::before {
 }
 
 .problem-card {
-    background: linear-gradient(135deg, var(--light-pink) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
     padding: 30px;
     border-radius: 15px;
     border-left: 5px solid var(--primary-pink);
@@ -500,7 +497,7 @@ header::before {
 }
 
 .problem-card h4 {
-    color: var(--primary-pink);
+    color: var(--dark-pink);
     font-size: 1.1em;
     margin-bottom: 15px;
     font-weight: 600;
@@ -534,7 +531,7 @@ header::before {
 }
 
 .feature-card {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--light-pink) 100%);
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-pink) 100%);
     padding: 40px 30px;
     border-radius: 15px;
     text-align: center;
@@ -587,7 +584,7 @@ header::before {
 
 .feature-card h3 {
     font-size: 1.3em;
-    color: var(--primary-pink);
+    color: var(--dark-pink);
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -606,7 +603,7 @@ header::before {
 }
 
 .benefit-card {
-    background: linear-gradient(135deg, var(--light-pink) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
     padding: 30px 25px;
     border-radius: 15px;
     text-align: center;
@@ -636,7 +633,7 @@ header::before {
 .benefit-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-pink), var(--primary-dark-pink));
+    background: linear-gradient(135deg, var(--primary-pink), #FF6B6B);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -655,7 +652,7 @@ header::before {
 
 .benefit-card h3 {
     font-size: 1.4em;
-    color: var(--primary-pink);
+    color: var(--dark-pink);
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -698,7 +695,7 @@ header::before {
 }
 
 .comparison tr:nth-child(even) { 
-    background: linear-gradient(135deg, var(--light-pink) -80%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
 }
 
 .prokai-column {
@@ -706,7 +703,7 @@ header::before {
 }
 
 .highlight-cell {
-    color: var(--primary-pink);
+    color: var(--dark-pink);
     font-weight: 600;
     position: relative;
 }
@@ -743,7 +740,7 @@ header::before {
 }
 
 .testimonial-card {
-    background: linear-gradient(135deg, var(--light-pink) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-pink) 100%);
     padding: 30px;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -817,7 +814,7 @@ header::before {
 }
 
 .faq-item {
-    background: linear-gradient(135deg, var(--light-pink) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%);
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
@@ -832,7 +829,7 @@ header::before {
 .faq-question { 
     font-weight: 600;
     padding: 20px;
-    color: var(--primary-pink);
+    color: var(--dark-pink);
     cursor: pointer;
     font-size: 1.1em;
     display: flex;
@@ -952,7 +949,7 @@ header::before {
 .pulse-button:hover { 
     transform: translateY(-3px) scale(1.05);
     box-shadow: var(--shadow-hover);
-    color: var(--primary-pink);
+    color: var(--dark-pink);
 }
 
 .cta-features {
