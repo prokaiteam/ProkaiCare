@@ -314,7 +314,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             
-            <img src="/app_logo.png" alt="Logo" width="200" />
+            {/* <img src="/app_logo.png" alt="Logo" width="200" /> */}
             <motion.h1 
               className="text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -329,7 +329,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              AI-Powered Study Revolution V2
+              AI-Powered Study Revolution
             </motion.p>
           </motion.div>
           
