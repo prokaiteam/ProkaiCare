@@ -329,7 +329,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              AI-Powered Study Revolution
+              AI-Powered Study Revolution V1
             </motion.p>
           </motion.div>
           
