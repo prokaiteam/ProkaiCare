@@ -337,7 +337,7 @@ export default function Home() {
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 4, duration: 0.8 }}
+            transition={{ delay: 1, duration: 0.8 }}
           >
             <p className="text-xl md:text-2xl font-bold bg-glass rounded-3xl px-8 py-6 backdrop-blur-xl border-2 border-white/20 shadow-2xl hover:transform hover:-translate-y-2 transition-all duration-300">
               Clear Any Exam in 3 Clicks • ₹250 Only • No Books, No Courses! • No Online Teachers, No MCQ Papers • ProKai Covers All Things Like Your Personal Alibaba Genie!
@@ -411,7 +411,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-16">
             Why Students Struggle? ProKai Has The Only Solutions!
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
             {problems.map((problem, index) => (
               <motion.div
                 key={index}
@@ -435,7 +435,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-16">
             ProKai vs All Traditional Platforms
           </h2>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto px-5">
             <table className="w-full bg-glass rounded-2xl overflow-hidden backdrop-blur-lg">
               <thead>
                 <tr className="gradient-primary">
@@ -540,7 +540,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-10 p-5">
             How ProKai Works: The Magic Behind AI Study Scripts
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 px-5">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -566,7 +566,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-16">
             Why ProKai is Your Smart Choice
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -592,7 +592,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-16">
             What Students Say About ProKai
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 px-5">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -633,7 +633,7 @@ export default function Home() {
                   <AccordionTrigger className="px-6 py-4 text-left font-semibold text-lg hover:bg-pink-500/10 transition-colors duration-300 [&[data-state=open]]:bg-pink-500/10">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-300 border-t border-white/10">
+                  <AccordionContent className="px-6 pb-4 text-gray-300 border-t border-white/10 pt-4">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
