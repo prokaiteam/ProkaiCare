@@ -314,7 +314,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             
-            {/* <img src="/app_logo.png" alt="Logo" width="200" /> */}
+            <img src="https://prokaiteam.github.io/ProkaiCare/images/app_logo.png" alt="Logo" width="200" />
             <motion.h1 
               className="text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
