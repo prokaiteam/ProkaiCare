@@ -5,12 +5,12 @@ import { Card, CardContent } from '../components/ui1/card';
 // import { Badge } from '../components/ui1/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui1/accordion';
 
-import { 
-  Star, 
-  ArrowUp, 
-  CheckCircle, 
-  Clock, 
-  DollarSign, 
+import {
+  Star,
+  ArrowUp,
+  CheckCircle,
+  Clock,
+  DollarSign,
   MessageCircle,
   Zap,
   BarChart3,
@@ -19,23 +19,23 @@ import {
   Mail,
   // ChevronDown
 } from 'lucide-react';
-import { 
-  FaTelegram, 
-  FaWhatsapp, 
-  FaYoutube, 
-  FaLinkedin, 
-  FaBlogger, 
-  FaFacebook, 
-  FaTwitter, 
-  FaInstagram, 
-  FaDiscord 
+import {
+  FaTelegram,
+  FaWhatsapp,
+  FaYoutube,
+  FaLinkedin,
+  FaBlogger,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaDiscord
 } from 'react-icons/fa';
 import { FloatingElements } from '../components/ui1/floating-elements';
 import { AnimatedCounter } from '../components/ui1/animated-counter';
 
 const LoadingOverlay = ({ isVisible }: { isVisible: boolean }) => {
   if (!isVisible) return null;
-  
+
   return (
     <motion.div
       className="fixed inset-0 bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center z-50"
@@ -305,17 +305,17 @@ export default function Home() {
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iODAiIGN5PSI0MCIgcj0iMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iODAiIHI9IjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjEwIiByPSIxLjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjEiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjYwIiByPSIyLjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjEiLz48L3N2Zz4=')] animate-float"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="flex flex-col items-center justify-center mb-12"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            
+
             <img src="https://prokaiteam.github.io/ProkaiCare/images/app_logo.png" alt="Logo" width="200" />
-            <motion.h1 
+            <motion.h1
               className="text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -323,7 +323,7 @@ export default function Home() {
             >
               ProKai
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl font-semibold"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -332,8 +332,8 @@ export default function Home() {
               AI-Powered Study Revolution
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -349,7 +349,7 @@ export default function Home() {
       {/* Hero Section */}
       <AnimatedSection className="py-24 text-center bg-slate-900 relative">
         <div className="container mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold text-pink-500 mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -357,8 +357,8 @@ export default function Home() {
           >
             Transform Your Exam Preparation Forever
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl text-gray-300 max-w-3xl mx-auto mb-16 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -379,7 +379,7 @@ export default function Home() {
                 </CardContent>
               </Card>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={1.1}>
               <Card className="bg-glass border-pink-500/20 hover:scale-105 transition-transform duration-300">
                 <CardContent className="text-center p-6">
@@ -390,7 +390,7 @@ export default function Home() {
                 </CardContent>
               </Card>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={1.4}>
               <Card className="bg-glass border-pink-500/20 hover:scale-105 transition-transform duration-300">
                 <CardContent className="text-center p-6">
@@ -409,7 +409,8 @@ export default function Home() {
         {/* Problems Section */}
         <AnimatedSection className="py-20 bg-glass-dark rounded-3xl my-16">
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-16">
-            Why Students Struggle? ProKai Has The Only Solutions!
+            Why Students Struggle?<br />
+            <span className="block mt-4">ProKai Has The Only Solutions!</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
             {problems.map((problem, index) => (
@@ -441,7 +442,7 @@ export default function Home() {
                 <tr className="gradient-primary">
                   <th className="px-6 py-4 text-left font-bold">Feature</th>
                   <th className="px-6 py-4 text-center font-bold">ProKai</th>
-                  <th className="px-6 py-4 text-center font-bold">Others (Testbook, BYJU'S, Unacademy)</th>
+                  <th className="px-6 py-4 text-center font-bold">Others ( Testbook, BYJU'S, Unacademy,<br /> PW, wifi study, utkarsh....even all )</th>
                 </tr>
               </thead>
               <tbody>
@@ -526,6 +527,12 @@ export default function Home() {
                   <td className="px-6 py-4 text-center bg-pink-500/20 font-semibold">Smart revision with AI-generated summaries</td>
                   <td className="px-6 py-4 text-center text-gray-300">Manual note-making and revision</td>
                 </tr>
+
+                <tr className="border-b border-white/10 hover:bg-pink-500/10 transition-colors duration-300">
+                  <td className="px-6 py-4 font-semibold">Language support!</td>
+                  <td className="px-6 py-4 text-center bg-pink-500/20 font-semibold">Choose any language at any time, Full freedom.</td>
+                  <td className="px-6 py-4 text-center text-gray-300">Not possible!</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -536,8 +543,8 @@ export default function Home() {
           {/* <div className="mx-auto mb-12 rounded-2xl shadow-2xl w-full max-w-2xl h-64 bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center animate-pulse-glow">
             <div className="text-white text-4xl font-bold">AI Study Magic</div>
           </div> */}
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-10 p-5">
+
+          <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-10 p-5 px-10">
             How ProKai Works: The Magic Behind AI Study Scripts
           </h2>
           <div className="grid md:grid-cols-3 gap-8 px-5">
@@ -604,7 +611,11 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center border-2 border-pink-500">
-                  <span className="text-white font-bold text-xl">{testimonial.name.charAt(0)}</span>
+                  <img
+                    src="https://prokaiteam.github.io/ProkaiCare/images/meem.png"
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
                 <div className="text-center">
                   <p className="text-gray-300 mb-4 italic">"{testimonial.comment}"</p>
@@ -644,8 +655,8 @@ export default function Home() {
 
         {/* CTA Section */}
         <AnimatedSection className="py-20 text-center">
-    
-          
+
+
           <div className="gradient-primary rounded-3xl p-12 mx-auto max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
               Ready to Transform Your Study Life?
@@ -653,16 +664,16 @@ export default function Home() {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Join 10,000+ students who've already revolutionized their exam preparation with ProKai's AI-powered study scripts.
             </p>
-            
+
             <div className="bg-white rounded-2xl p-6 mb-8 max-w-md mx-auto backdrop-blur-lg hover:scale-105 duration-300">
               <div className="text-3xl font-black text-pink-500 mb-2">Download ProKai For Free</div>
               <div className="text-pink-500">One-time payment • Lifetime access</div>
             </div>
-            
+
             {/* <Button className="bg-white text-pink-500 font-bold text-xl px-12 py-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               Get ProKai Now - Start in 3 Clicks!
             </Button> */}
-            
+
             <div className="flex flex-wrap justify-center gap-6 mt-8 text-white/80">
               {[
                 { icon: <CheckCircle className="w-5 h-5" />, text: "Instant Access" },
@@ -684,8 +695,8 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-pink-500 mb-8">Get In Touch</h2>
           <p className="text-xl text-gray-300 mb-8">Have questions? We're here to help you succeed!</p>
           <div className="flex flex-wrap justify-center gap-8">
-            <a 
-              href="mailto:prokai.team@gmail.com" 
+            <a
+              href="mailto:prokai.team@gmail.com"
               className="flex items-center gap-3 bg-glass rounded-xl px-6 py-4 hover:bg-pink-500/20 transition-all duration-300 border border-pink-500/20 hover:scale-105"
             >
               <Mail className="text-pink-500 text-xl" />
@@ -705,11 +716,11 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 py-16 relative z-10">
           {/* Social Media Links */}
           <div className="text-center mb-8 mt-8">
-            <motion.h3 
+            <motion.h3
               className="text-white text-xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -728,7 +739,7 @@ export default function Home() {
                 { icon: <FaFacebook className="w-5 h-5" />, link: "https://www.facebook.com/share/16ph3vMPVX/", name: "Facebook", color: "hover:bg-blue-700" },
                 { icon: <FaTwitter className="w-5 h-5" />, link: "https://x.com/ProkaiOfficial?t=kfyCnNGSq4ZiRGBBCxHjGw&s=09", name: "X", color: "hover:bg-gray-600" },
                 { icon: <FaInstagram className="w-5 h-5" />, link: "https://www.instagram.com/prokaiofficial?igsh=MTI5cWc5NTlqaGc0Zg==", name: "Instagram", color: "hover:bg-pink-500" },
-                { icon: <FaDiscord className="w-5 h-5" />, link: "https://discord.gg/QWs6Yw9v", name: "Discord", color: "hover:bg-purple-500" }
+                { icon: <FaDiscord className="w-5 h-5" />, link: "https://discord.gg/eaWn4T6R8G", name: "Discord", color: "hover:bg-purple-500" }
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -751,7 +762,7 @@ export default function Home() {
           </div>
 
           {/* Quick Info Grid */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -764,7 +775,7 @@ export default function Home() {
               { icon: <Clock className="w-5 h-5" />, text: "24/7 Support" },
               { icon: <DollarSign className="w-5 h-5" />, text: "₹250 Only" }
             ].map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="text-center p-4 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/30 hover:border-pink-500/30 transition-all duration-300 hover:bg-gray-800/50"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -777,7 +788,7 @@ export default function Home() {
           </motion.div>
 
           {/* Footer Bottom */}
-          <motion.div 
+          <motion.div
             className="border-t border-gray-700/50 pt-6 text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -786,7 +797,7 @@ export default function Home() {
           >
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
               <span className="text-gray-400">© 2024 ProKai. All rights reserved.</span>
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm border border-yellow-500/30 rounded-full px-4 py-2"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
