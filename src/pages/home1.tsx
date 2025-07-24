@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+// import { Button } from '../components/ui1/button';
+import { Card, CardContent } from '../components/ui1/card';
+// import { Badge } from '../components/ui1/badge';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui1/accordion';
 
 import { 
   Star, 
@@ -17,7 +17,7 @@ import {
   BookOpen,
   Users,
   Mail,
-  ChevronDown
+  // ChevronDown
 } from 'lucide-react';
 import { 
   FaTelegram, 
@@ -30,8 +30,8 @@ import {
   FaInstagram, 
   FaDiscord 
 } from 'react-icons/fa';
-import { FloatingElements } from '../components/ui/floating-elements';
-import { AnimatedCounter } from '../components/ui/animated-counter';
+import { FloatingElements } from '../components/ui1/floating-elements';
+import { AnimatedCounter } from '../components/ui1/animated-counter';
 
 const LoadingOverlay = ({ isVisible }: { isVisible: boolean }) => {
   if (!isVisible) return null;
@@ -121,41 +121,41 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: { children: Re
   );
 };
 
-const TypewriterText = ({ text, delay = 0 }: { text: string, delay?: number }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [showCursor, setShowCursor] = useState(true);
+// const TypewriterText = ({ text, delay = 0 }: { text: string, delay?: number }) => {
+//   const [displayText, setDisplayText] = useState('');
+//   const [showCursor, setShowCursor] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      let index = 0;
-      const interval = setInterval(() => {
-        if (index < text.length) {
-          setDisplayText(text.slice(0, index + 1));
-          index++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 100);
-      return () => clearInterval(interval);
-    }, delay);
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       let index = 0;
+//       const interval = setInterval(() => {
+//         if (index < text.length) {
+//           setDisplayText(text.slice(0, index + 1));
+//           index++;
+//         } else {
+//           clearInterval(interval);
+//         }
+//       }, 100);
+//       return () => clearInterval(interval);
+//     }, delay);
 
-    const cursorTimer = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
+//     const cursorTimer = setInterval(() => {
+//       setShowCursor(prev => !prev);
+//     }, 500);
 
-    return () => {
-      clearTimeout(timer);
-      clearInterval(cursorTimer);
-    };
-  }, [text, delay]);
+//     return () => {
+//       clearTimeout(timer);
+//       clearInterval(cursorTimer);
+//     };
+//   }, [text, delay]);
 
-  return (
-    <span>
-      {displayText}
-      {showCursor && <span className="border-r-4 border-white animate-pulse">|</span>}
-    </span>
-  );
-};
+//   return (
+//     <span>
+//       {displayText}
+//       {showCursor && <span className="border-r-4 border-white animate-pulse">|</span>}
+//     </span>
+//   );
+// };
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
