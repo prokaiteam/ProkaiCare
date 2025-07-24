@@ -253,18 +253,20 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Rahul Sharma",
-      role: "SSC CGL Qualified",
-      rating: 5,
+      name: "Meemanshoo",
+      role: "Flutter Developer",
+      rating: 4,
       comment: "ProKai helped me clear SSC CGL in just 3 months! The AI scripts are like magic - I got exactly what I needed for my exam.",
-      avatar: ""
+      avatar: "",
+      image: "https://prokaiteam.github.io/ProkaiCare/images/meem.png"
     },
     {
       name: "Priya Mehta",
       role: "UPSC Aspirant",
       rating: 5,
       comment: "Saved ₹50,000 on coaching fees! ProKai's real-time explanations are better than any teacher I've had.",
-      avatar: ""
+      avatar: "",
+      image: "https://prokaiteam.github.io/ProkaiCare/images/ankur.png"
     },
     {
       name: "Amit Kumar",
@@ -610,9 +612,9 @@ export default function Home() {
                 transition={{ delay: index * 0.2, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center border-2 border-pink-500">
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center border-2 border-pink-500">
                   <img
-                    src="https://prokaiteam.github.io/ProkaiCare/images/meem.png"
+                    src={testimonial.image}
                     alt={testimonial.name}
                     className="w-full h-full object-cover rounded-full"
                   />
