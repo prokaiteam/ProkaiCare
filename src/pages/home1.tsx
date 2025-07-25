@@ -253,27 +253,52 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Meemanshoo",
-      role: "Flutter Developer",
+      name: "Pawan Kumar",
+      role: "",
       rating: 4,
       comment: "ProKai helped me clear SSC CGL in just 3 months! The AI scripts are like magic - I got exactly what I needed for my exam.",
       avatar: "",
-      image: "https://prokaiteam.github.io/ProkaiCare/images/meem.png"
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjXNsw5wIOs0mep9PeErJ5s5g-710Clvv4ZtMKFS7cKrA5cqaZQl=s64-p-k-rw-no"
     },
     {
-      name: "Priya Mehta",
+      name: "Meemanshoo",
       role: "UPSC Aspirant",
       rating: 5,
       comment: "Saved ₹50,000 on coaching fees! ProKai's real-time explanations are better than any teacher I've had.",
       avatar: "",
-      image: "https://prokaiteam.github.io/ProkaiCare/images/ankur.png"
+      image: "https://prokaiteam.github.io/ProkaiCare/images/meem.png"
     },
     {
-      name: "Amit Kumar",
+      name: "Akash",
       role: "CBSE Class 12",
       rating: 5,
       comment: "The 3-click setup is no joke! I was studying within seconds. My CBSE scores improved by 40%!",
-      avatar: ""
+      avatar: "",
+      image: "https://prokaiteam.github.io/ProkaiCare/images/akash.png"
+    }
+  ];
+
+  const founders = [
+    {
+      name: "Saif",
+      role: "Co-Founder & Visionary",
+      image: "https://prokaiteam.github.io/ProkaiCare/images/saif.jpeg",
+      bio: "Leads ProKai’s mission to make AI-driven learning accessible, effective, and personalized for every student.",
+      rating: 4
+    },
+    {
+      name: "Raajveer",
+      role: "Founder & CEO",
+      image: "https://prokaiteam.github.io/ProkaiCare/images/ankur.jpg",
+      bio: "Founder of ProKai, building AI-powered tools to make competitive exam preparation smarter and more efficient.",
+      rating: 5
+    },
+    {
+      name: "Rituraj",
+      role: "Co-Founder & Product Strategist",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQGveMtmhxAWog/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709617736062?e=1756339200&v=beta&t=rLX1tlQJjrLRS1HyBnB4LLBZBYtz8mDqhuU7OX_NHuk",
+      bio: "Shapes the ProKai experience by turning learner insights into powerful AI tools that truly help students grow.",
+      rating: 3
     }
   ];
 
@@ -633,6 +658,41 @@ export default function Home() {
             ))}
           </div>
         </AnimatedSection>
+
+
+        {/* Founders Section */}
+        <AnimatedSection className="py-20 bg-glass-dark rounded-3xl my-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-pink-500 text-center mb-16">
+            Meet the Founders of ProKai
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 px-5 justify-center">
+            {founders.map((founder, index) => (
+              <motion.div
+                key={index}
+                className="magnetic-card bg-glass rounded-2xl p-8 border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-pink-500">
+                  <img
+                    src={founder.image}
+                    alt={founder.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="text-center">
+                  <p className="font-semibold text-pink-500 text-lg">{founder.name}</p>
+                  <p className="text-sm text-gray-400 mb-3">{founder.role}</p>
+                  <p className="text-gray-300 text-sm">{founder.bio}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+
 
         {/* FAQ Section */}
         <AnimatedSection className="py-20 bg-glass-dark rounded-3xl my-16">
