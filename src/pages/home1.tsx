@@ -274,7 +274,7 @@ export default function Home() {
       rating: 5,
       comment: "The 3-click setup is no joke! I was studying within seconds. My CBSE scores improved by 40%!",
       avatar: "",
-      image: "https://prokaiteam.github.io/ProkaiCare/images/akash.png"
+      image: "https://prokaiteam.github.io/ProkaiCare/images/akash.jpg"
     }
   ];
 
