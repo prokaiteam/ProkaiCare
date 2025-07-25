@@ -254,7 +254,7 @@ export default function Home() {
   const testimonials = [
     {
       name: "Pawan Kumar",
-      role: "",
+      role: "SSC CGL Topper & ProKai User",
       rating: 4,
       comment: "ProKai helped me clear SSC CGL in just 3 months! The AI scripts are like magic - I got exactly what I needed for my exam.",
       avatar: "",
