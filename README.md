@@ -67,3 +67,21 @@ export default tseslint.config([
   },
 ])
 ```
+
+
+
+
+
+For Deploy
+
+npm run build   
+
+npm run deploy 
+
+then push to github
+
+----------------
+
+For Local Run
+
+npm start

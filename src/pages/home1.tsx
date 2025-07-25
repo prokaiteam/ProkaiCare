@@ -261,12 +261,12 @@ export default function Home() {
       image: "https://lh3.googleusercontent.com/a-/ALV-UjXNsw5wIOs0mep9PeErJ5s5g-710Clvv4ZtMKFS7cKrA5cqaZQl=s64-p-k-rw-no"
     },
     {
-      name: "Meemanshoo",
+      name: "Saif",
       role: "UPSC Aspirant",
       rating: 5,
       comment: "Saved ₹50,000 on coaching fees! ProKai's real-time explanations are better than any teacher I've had.",
       avatar: "",
-      image: "https://prokaiteam.github.io/ProkaiCare/images/meem.png"
+      image: "https://prokaiteam.github.io/ProkaiCare/images/saif.jpeg"
     },
     {
       name: "Akash",
@@ -280,9 +280,9 @@ export default function Home() {
 
   const founders = [
     {
-      name: "Saif",
+      name: "Meemanshoo",
       role: "Co-Founder & Visionary",
-      image: "https://prokaiteam.github.io/ProkaiCare/images/saif.jpeg",
+      image: "https://prokaiteam.github.io/ProkaiCare/images/meem.png",
       bio: "Leads ProKai’s mission to make AI-driven learning accessible, effective, and personalized for every student.",
       rating: 4
     },
